@@ -1,0 +1,47 @@
+[aws]
+aws_region_name = [Region]
+aws_access_key_id = [Access_Key]
+aws_secret_access_key = [Secret_Access_Key]
+
+[cluster t2_singularity]
+vpc_settings = public
+key_name = [Key_Pair_Name]
+master_instance_type = t2.micro
+compute_instance_type = t2.micro
+shared_dir = /shared
+initial_queue_size = 0
+max_queue_size = 10
+ebs_settings = custom
+cluster_type = spot
+spot_price = 0.0152
+post_install = https://raw.githubusercontent.com/TakahisaShiratori/singularity-on-cfncluster/master/install_singularity.sh
+base_os = alinux
+
+[cluster c4_singularity]
+vpc_settings = public
+key_name = [Key_Pair_Name]
+master_instance_type = c4.xlarge
+compute_instance_type = c4.xlarge
+shared_dir = /shared
+initial_queue_size = 0
+max_queue_size = 10
+ebs_settings = custom
+cluster_type = spot
+spot_price = 0.252
+post_install = https://raw.githubusercontent.com/TakahisaShiratori/singularity-on-cfncluster/master/install_singularity.sh
+placement_group = DYNAMIC
+placement = cluster
+base_os = alinux
+
+[ebs custom]
+volume_size = 16
+
+[vpc public]
+vpc_id = [VPC_ID]
+master_subnet_id = [Master_Subnet_ID]
+
+[global]
+update_check = true
+sanity_check = true
+cluster_template = t2_singularity
+
