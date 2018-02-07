@@ -8,7 +8,6 @@ sudo apt-get update
 sudo apt-get -y install openfoam4
 echo "source /opt/openfoam4/etc/bashrc" >> ~/.bashrc
 source ~/.bashrc
-mkdir -p $FOAM_RUN
 
 # Install X2GO Server and Ubuntu MATE
 # See also:
