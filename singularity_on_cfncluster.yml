@@ -231,7 +231,7 @@ Outputs:
     Value: !GetAtt PrepostEC2.PublicIp
 
   Region:
-    Value: AWS::Region
+    Value: !Ref AWS::Region
 
   AccessKey:
     Description: Access Key used by CfnCluster
@@ -249,3 +249,7 @@ Outputs:
 
   MasterSubnetId:
     Value: !Ref ClusterSubnet
+
+  SourceIp:
+    Description: Source IP for SSH Access
+    Value: !Ref SourceIp

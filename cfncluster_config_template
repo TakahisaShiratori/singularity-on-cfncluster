@@ -1,11 +1,11 @@
 [aws]
 aws_region_name = [Region]
-aws_access_key_id = [Access_Key]
-aws_secret_access_key = [Secret_Access_Key]
+aws_access_key_id = [AccessKey]
+aws_secret_access_key = [SecretAccessKey]
 
 [cluster t2_singularity]
 vpc_settings = public
-key_name = [Key_Pair_Name]
+key_name = [KeyPairName]
 master_instance_type = t2.micro
 compute_instance_type = t2.micro
 shared_dir = /shared
@@ -21,7 +21,7 @@ base_os = alinux
 
 [cluster c4_singularity]
 vpc_settings = public
-key_name = [Key_Pair_Name]
+key_name = [KeyPairName]
 master_instance_type = c4.xlarge
 compute_instance_type = c4.xlarge
 shared_dir = /shared
@@ -41,8 +41,9 @@ base_os = alinux
 volume_size = 16
 
 [vpc public]
-vpc_id = [VPC_ID]
-master_subnet_id = [Master_Subnet_ID]
+vpc_id = [VpcId]
+master_subnet_id = [MasterSubnetId]
+ssh_from = [SourceIp]
 
 [global]
 update_check = true
