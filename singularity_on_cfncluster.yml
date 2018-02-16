@@ -220,7 +220,7 @@ Resources:
           exec > >(tee /var/log/user-data.log || logger -t user-data -s 2> /dev/console) 2>&1
           cd /home/ubuntu
           apt-get -y update
-          wget https://raw.githubusercontent.com/TakahisaShiratori/singularity-on-cfncluster/master/configure_cfncluster.sh
+          wget https://raw.githubusercontent.com/TakahisaShiratori/singularity-on-cfncluster/enable-mpi/configure_cfncluster.sh
           chmod 777 ./configure_cfncluster.sh
           sudo -u ubuntu ./configure_cfncluster.sh
           rm configure_cfncluster.sh

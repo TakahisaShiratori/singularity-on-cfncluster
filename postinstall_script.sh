@@ -9,7 +9,7 @@ cd singularity
 ./configure --prefix=/shared
 make
 make install
-echo "PATH=\${PATH}:/shared/bin" >> /home/ec2-user/.bashrc
+echo "PATH=\${PATH}:/shared/bin:/usr/lib64/openmpi/bin" >> /home/ec2-user/.bashrc
 echo "export PATH" >> /home/ec2-user/.bashrc
 cd ..
 rm -rf singularity
